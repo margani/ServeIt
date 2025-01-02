@@ -3,7 +3,6 @@
 	import '@fontsource/open-sans/400.css';
 	import { browser, dev } from '$app/environment';
 	import { navigating } from '$app/state';
-	import Nav from '$lib/common/nav.svelte';
 	import { Loading, loading } from '$lib';
 	import { onMount } from 'svelte';
 
@@ -34,25 +33,14 @@
 {/if}
 
 <div class="flex bg-gray-100">
-	<aside class="relative hidden h-screen w-64 bg-teal-600 shadow-xl sm:block">
-		<div class="p-6">
-			<a href="/" class="text-3xl font-semibold uppercase text-white hover:text-gray-300">
-				Serve It
-			</a>
-		</div>
-		<Nav mode="vertical-nav" />
-	</aside>
 	<div class="flex h-screen w-full flex-col overflow-y-hidden">
-		<Nav mode="desktop-header" />
-		<Nav mode="mobile-header-nav" />
-		<div class="flex w-full flex-col overflow-x-hidden border-t">
-			<main class="w-full flex-grow p-6">
-				<div class="container mx-auto relative">
-					<Loading />
-					{@render children?.()}
-				</div>
-			</main>
-		</div>
+		<main class="w-full flex-grow p-6">
+			Serve It
+			<div class="container relative mx-auto">
+				<Loading />
+				{@render children?.()}
+			</div>
+		</main>
 	</div>
 </div>
 
